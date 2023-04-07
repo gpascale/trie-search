@@ -19,7 +19,7 @@ type TrieSearchOptions<T> = {
   insertFullUnsplitKey? : boolean
 }
 
-export default class TrieSearch<T> {
+declare class TrieSearch<T> {
   keyFields : KeyFields;
 
   constructor(keyfields? : KeyFields | null, options? : TrieSearchOptions<T>);
@@ -44,3 +44,5 @@ export default class TrieSearch<T> {
 declare namespace TrieSearch {
   export type ReducerFn<T> = (accumulator : T[], phrase : string, matches : T[], trieSearch : TrieSearch<T>) => T[]
 }
+
+export = TrieSearch
